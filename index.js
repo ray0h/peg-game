@@ -1,18 +1,9 @@
-var body = document.querySelector('body');
+import { emptyPeg } from '/pegMoves.js'
 
-body.onclick = (e) => {
-  empty(e.target.id)
-  console.log(e.target.id)
-}
+var board = document.getElementById('board');
+// possible moves for all pegs ([adj peg, hole to jump to])
 
-const empty = (id) => {
-  let peg = document.getElementById(id);
-  peg.classList.add('empty');
-};
 
-const reset = () => {
-
-}
 
 // Game flow
 // 1. Choose the starting peg to create a hole - remove that peg
