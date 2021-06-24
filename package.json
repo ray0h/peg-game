@@ -1,0 +1,26 @@
+{
+  "name": "peggame",
+  "version": "1.0.0",
+  "description": "Peg game based on Cracker Barrel golf tee game.   There are 15 pegs set up in an equilateral triangle.  Remove one peg to start.   Pegs can jump over an adjacent peg if there is an empty hole where it lands.  Jumped pegs are removed from the board. Finish the game with the lowest number of pegs available.   Bonus if the last peg ends up in the starting hole!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ray0h/peg-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ray0h/peg-game/issues"
+  },
+  "homepage": "https://github.com/ray0h/peg-game#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@testing-library/jest-dom": "^5.14.1",
+    "babel-jest": "^27.0.5",
+    "jest": "^27.0.5"
+  }
+}
