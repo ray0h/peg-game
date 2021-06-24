@@ -2,8 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { emptyPeg, isFilled, movePeg } from '../pegMoves';
-import { validMove, movesLeft } from '../boardMoves';
+import { emptyPeg, isFilled, movePeg, validMove, movesLeft, highlight } from '../boardMoves';
 
 describe('Move functions related to individual pegs', () => {
   test('empties peg div by adding empty class', () => {
@@ -23,6 +22,34 @@ describe('Move functions related to individual pegs', () => {
     </div>`
     expect(isFilled('0')).toBeTruthy();
     expect(isFilled('1')).toBeFalsy();
+  });
+
+  test('highlights chosen peg if filled/able to move', () => {
+    document.body.innerHTML = `
+    <div id="board">
+      <div class="row first">
+        <div class="spot" id="0"></div>
+        <div class="spot" id="1"></div>
+        <div class="spot empty" id="2"></div>
+        <div class="spot" id="3"></div>
+        <div class="spot" id="4"></div>
+      </div>
+      <div class="row second">
+        <div class="spot" id="5"></div>
+        <div class="spot" id="6"></div>
+        <div class="spot" id="7"></div>
+        <div class="spot" id="8"></div>
+      </div>
+      <div class="row third">
+        <div class="spot" id="9"></div>
+        <div class="spot" id="10"></div>
+        <div class="spot" id="11"></div>
+      </div>
+    </div>`
+    expect(highlight('1')).toBeFalsy();
+    expect(highlight('0')).toBe('0');
+    let zero = document.getElementById('0');
+    expect(zero.classList.contains('chosen')).toBeTruthy();
   })
 });
 

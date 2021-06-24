@@ -1,12 +1,23 @@
-import { emptyPeg } from '/pegMoves.js'
+
+import { createMessage } from '/messages.js';
+import { emptyPeg, isFilled, highlight, movePeg, validMove, movesLeft } from './boardMoves.js';
 
 var board = document.getElementById('board');
 // possible moves for all pegs ([adj peg, hole to jump to])
 
 
+const initiate = () => {
+  createMessage('Choose peg to remove and start the game');
+  board.addEventListener("click", (e) => {
+    emptyPeg(e.target.id);
+    createMessage();
+  }, {once : true})
+};
+
 
 // Game flow
 // 1. Choose the starting peg to create a hole - remove that peg
+initiate();
 // 2. Make a move
 // 2a. Select a peg (highlight)
 // 3. Evaluate valid moves

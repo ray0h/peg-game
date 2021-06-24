@@ -16,6 +16,35 @@ const moves = {
   14: [['12','9'], ['13','11']]
 };
 
+export const emptyPeg = (id) => {
+  let peg = document.getElementById(id);
+  peg.classList.add('empty');
+  peg.classList.remove('chosen');
+};
+
+export const isFilled = (id) => {
+  let peg = document.getElementById(id);
+  return !peg.classList.contains('empty');
+}
+
+export const highlight = (id) => {
+  let flag = false;
+  let peg = document.getElementById(id);
+  moves[parseInt(id)].forEach(function(pair) {
+    if (validMove(pair)) {
+      peg.classList.add('chosen');
+      flag = id;
+    };
+  });
+  return flag;
+};
+
+export const movePeg = (start, finish) => {
+  let end = document.getElementById(finish);
+  emptyPeg(start)
+  end.classList.remove('empty');
+};
+
 export const validMove = (pair) => {
   let adj = document.getElementById(pair[0]);
   let final = document.getElementById(pair[1]);

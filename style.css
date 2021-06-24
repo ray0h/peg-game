@@ -44,6 +44,10 @@ body {
   font-weight: bold;
 }
 
+.chosen {
+  background-color: dodgerblue;
+}
+
 .empty {
   background-color: black;
 }
