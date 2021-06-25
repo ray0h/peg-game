@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { emptyPeg, isFilled, movePeg, validMove, movesLeft, highlight } from '../boardMoves';
+import { isSpot, emptyPeg, isFilled, movePeg, validMove, movesLeft, highlight } from '../boardMoves';
 
 beforeEach(() => {
   document.body.innerHTML = `
@@ -36,6 +36,11 @@ beforeEach(() => {
 });
 
 describe('Move functions related to individual pegs', () => {
+  test('recognizes clicked element is a peg', () => {
+    expect(isSpot('1')).toBeTruthy();
+    expect(isSpot('board')).toBeFalsy();
+  });
+
   test('empties peg div by adding empty class', () => {
     let peg = document.getElementById("0")
     expect(peg).not.toHaveClass('empty');

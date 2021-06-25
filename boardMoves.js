@@ -22,10 +22,14 @@ export const emptyPeg = (id) => {
   peg.classList.remove('chosen');
 };
 
+export const isSpot = (id) => {
+  return parseInt(id) >= 0 && parseInt(id) < 15;
+};
+
 export const isFilled = (id) => {
   let peg = document.getElementById(id);
   return !peg.classList.contains('empty');
-}
+};
 
 export const highlight = (id) => {
   let flag = false;
@@ -52,12 +56,19 @@ export const validMove = (pair) => {
 };
 
 export const movesLeft = () => {
+  let flag = false
   for (let i=0; i<15; i++) {
     moves[i].forEach(function(pair) {
       if (validMove(pair)) {
-        return true;
+        flag = true;
       };
     })
   }
-  return false;
+  return flag;
+};
+
+export const boardFull = () => {
+  let empties = document.getElementsByClassName('empty')
+  console.log(empties.length)
+  return empties.length == 0;
 };
