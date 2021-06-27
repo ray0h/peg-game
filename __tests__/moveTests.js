@@ -63,17 +63,20 @@ describe('Move functions related to individual pegs', () => {
 
 describe('Functions related to board state', () => {
   test('validates moves', () => {
-    expect(validMove(['1', '2'])).toBeTruthy();
-    expect(validMove(['0', '1'])).toBeFalsy();
+    expect(validMove('0', '2')).toBeTruthy();
+    expect(validMove('1', '3')).toBeFalsy();
   });
 
   test('executes a move', () => {
     let zero = document.getElementById('0');
+    let one = document.getElementById('1');
     let two = document.getElementById('2');
     expect(zero.classList.contains('empty')).toBeFalsy();
+    expect(one.classList.contains('empty')).toBeFalsy();
     expect(two.classList.contains('empty')).toBeTruthy();
     movePeg('0','2');
     expect(zero.classList.contains('empty')).toBeTruthy();
+    expect(one.classList.contains('empty')).toBeTruthy();
     expect(two.classList.contains('empty')).toBeFalsy();
   });
 

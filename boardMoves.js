@@ -35,7 +35,7 @@ export const highlight = (id) => {
   let flag = false;
   let peg = document.getElementById(id);
   moves[parseInt(id)].forEach(function(pair) {
-    if (validMove(pair)) {
+    if (validMove(id, pair[1])) {
       peg.classList.add('chosen');
       flag = id;
     };
@@ -43,23 +43,31 @@ export const highlight = (id) => {
   return flag;
 };
 
-export const movePeg = (start, finish) => {
-  let end = document.getElementById(finish);
-  emptyPeg(start)
+export const movePeg = (start, final) => {
+  let move = moves[parseInt(start)].filter(pair => pair[1] == final)[0]
+  let adj = move[0]
+  let end = document.getElementById(final);
+  emptyPeg(start);
+  emptyPeg(adj);
   end.classList.remove('empty');
 };
 
-export const validMove = (pair) => {
-  let adj = document.getElementById(pair[0]);
-  let final = document.getElementById(pair[1]);
-  return !adj.classList.contains('empty') && final.classList.contains('empty');
+export const validMove = (start, final) => {
+  let possMoves = moves[parseInt(start)].filter(pair => pair[1] == final)[0];
+  if (possMoves.length == 0) {
+    return false;
+  } else {
+    let adj = document.getElementById(possMoves[0]);
+    let end = document.getElementById(final);
+    return !adj.classList.contains('empty') && end.classList.contains('empty');
+  };
 };
 
 export const movesLeft = () => {
   let flag = false
   for (let i=0; i<15; i++) {
     moves[i].forEach(function(pair) {
-      if (validMove(pair)) {
+      if (validMove(String(i), pair[1])) {
         flag = true;
       };
     })
@@ -68,7 +76,6 @@ export const movesLeft = () => {
 };
 
 export const boardFull = () => {
-  let empties = document.getElementsByClassName('empty')
-  console.log(empties.length)
+  let empties = [...document.getElementsByClassName('empty')]
   return empties.length == 0;
 };
