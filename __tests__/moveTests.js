@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import Board from '../boardMoves';
+import Board from '../board';
 
 let board;
 beforeEach(() => {

@@ -20,7 +20,7 @@ class Board {
 
     this.validMove = (start, final) => {
       let possMoves = this.moves[parseInt(start)].filter(pair => pair[1] == final)[0];
-      if (possMoves.length == 0) {
+      if (!possMoves) {
         return false;
       } else {
         let adj = document.getElementById(possMoves[0]);
@@ -78,9 +78,7 @@ class Board {
         let start = document.getElementById(String(i));
         if (start.classList.contains('empty')) {
           return;
-        }
-        else if (this.validMove(String(i), pair[1])) {
-          console.log(`${String(i)}, ${pair[1]}`);
+        } else if (this.validMove(String(i), pair[1])) {
           flag = true;
         };
       })

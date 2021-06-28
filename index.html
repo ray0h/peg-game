@@ -10,36 +10,40 @@
 <body>
   <script type="module" src="index.js"></script>
   <div class="container">
-    <div>
-      <h2 id="title">Peg Game</h2>
+    <div id="comments"></div>
+    <div id="game">
+      <h2 id="title">Triangle Peg Game</h2>
       <div id="board">
         <div class="row first">
-          <div class="spot" id="0">1</div>
-          <div class="spot" id="1">2</div>
-          <div class="spot" id="2">3</div>
-          <div class="spot" id="3">4</div>
-          <div class="spot" id="4">5</div>
+          <div class="spot" id="0"></div>
+          <div class="spot" id="1"></div>
+          <div class="spot" id="2"></div>
+          <div class="spot" id="3"></div>
+          <div class="spot" id="4"></div>
         </div>
         <div class="row second">
-          <div class="spot" id="5">6</div>
-          <div class="spot" id="6">7</div>
-          <div class="spot" id="7">8</div>
-          <div class="spot" id="8">9</div>
+          <div class="spot" id="5"></div>
+          <div class="spot" id="6"></div>
+          <div class="spot" id="7"></div>
+          <div class="spot" id="8"></div>
         </div>
         <div class="row third">
-          <div class="spot" id="9">a</div>
-          <div class="spot" id="10">b</div>
-          <div class="spot" id="11">c</div>
+          <div class="spot" id="9"></div>
+          <div class="spot" id="10"></div>
+          <div class="spot" id="11"></div>
         </div>
         <div class="row fourth">
-          <div class="spot" id="12">d</div>
-          <div class="spot" id="13">e</div>
+          <div class="spot" id="12"></div>
+          <div class="spot" id="13"></div>
         </div>
         <div class="row">
-          <div class="spot" id="14">f</div>
+          <div class="spot" id="14"></div>
         </div>
       </div>
-      <div id="message">test</div>
+      <div id="msgcontainer">
+        <div id="message">test</div>
+        <button id="reset">Reset Game</button>
+      </div>
     </div>
   </div>
 </body>
