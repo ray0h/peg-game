@@ -91,8 +91,12 @@ describe('Functions related to board state', () => {
   });
 
   test('recognizes when no moves are available on the board', () => {
-  // need to mod beforeEach board to have no moves
-  board.emptyPeg('1')
-  expect(board.movesLeft()).toBeFalsy();
+    // need to mod beforeEach board to have no moves
+    board.emptyPeg('1')
+    expect(board.movesLeft()).toBeFalsy();
   });
+
+  test('counts remaining pegs on the board', () => {
+    expect(board.pegCount()).toBe(2);
+  })
 });

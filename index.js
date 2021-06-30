@@ -30,7 +30,8 @@ const game = (e) => {
 
   // check current status of board
   if (!board.movesLeft() && !board.boardFull()) {
-    createMessage('Game Over');
+    let pegCount = board.pegCount();
+    createMessage(`Game Over, ${pegCount} ${pegCount == 1 ? 'peg' : 'pegs'} left`);
     button.textContent = 'New Game';
   }; 
 };

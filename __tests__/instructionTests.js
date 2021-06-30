@@ -42,6 +42,7 @@ describe('test of reset button', () => {
         <div class="spot empty" id="13"></div>
         <div class="spot empty" id="14"></div>
         <div><button id="reset">New Game</button><div>
+        <div id="message"></div>
       </div>`
   })
   test('reset function resets board', () => {

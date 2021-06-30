@@ -64,7 +64,7 @@ class Board {
   
   movePeg = (start, final) => {
     let move = this.moves[parseInt(start)].filter(pair => pair[1] == final)[0]
-    let adj = move[0]
+    let adj = move[0];
     let end = document.getElementById(final);
     this.emptyPeg(start);
     this.emptyPeg(adj);
@@ -87,9 +87,14 @@ class Board {
   };
   
   boardFull = () => {
-    let empties = [...document.getElementsByClassName('empty')]
+    let empties = [...document.getElementsByClassName('empty')];
     return empties.length == 0;
   };
+
+  pegCount = () => {
+    let empties = [...document.getElementsByClassName('empty')];
+    return (15 - empties.length);
+  }
 };
 
 export default Board;
