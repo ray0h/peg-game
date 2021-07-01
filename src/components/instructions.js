@@ -14,6 +14,16 @@ export const resetBoard = () => {
   };
 };
 
+export const initializeStats = (stats) => {
+  let games = document.getElementById('games');
+  games.textContent = stats.gameCount;
+
+  for (let i=1; i<9; i++) {
+    let ep = document.getElementById(i+'peg');
+    ep.textContent = stats.endPegs[i];
+  }
+}
+
 export const addGame = (count, endPegs, epGames) => {
   let games = document.getElementById('games');
   let ep = document.getElementById(endPegs+'peg')
@@ -21,3 +31,8 @@ export const addGame = (count, endPegs, epGames) => {
   games.textContent = count;
   ep.textContent = epGames;
 };
+
+export const storeStats = (stats) => {
+  window.localStorage.setItem('gameCount', JSON.stringify(stats.gameCount));
+  window.localStorage.setItem('endPegs', JSON.stringify(stats.endPegs));
+} 

@@ -1,10 +1,11 @@
-import { createMessage, resetBoard, addGame } from './components/instructions.js';
+import { createMessage, resetBoard, addGame, storeStats, initializeStats } from './components/instructions.js';
 import Board from './components/board.js';
 import Stats from './components/stats.js';
 
 // Game flow
 const board = new Board();
 const stat = new Stats();
+initializeStats(stat);
 
 const game = (e) => {
   let currentPeg = document.querySelector('.chosen') ? document.querySelector('.chosen').id : null;
@@ -39,6 +40,7 @@ const game = (e) => {
     button.textContent = 'New Game';
     stat.addGame(pegCount);
     addGame(stat.gameCount, pegCount, stat.endPegs[pegCount]);
+    storeStats(stat);
   }; 
 };
 
