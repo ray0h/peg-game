@@ -9,18 +9,42 @@
 </head>
 <body>
   <script type="module" src="index.js"></script>
-  <div class="container">
-    <div id="comments">
-      <h3>Basic Rules</h3>
-      <ol>
-        <li>Jump a peg over another peg, but only if there is an open space available.</li>
-        <li>Remove each peg you jump over.</li>
-        <li>Leave the least number of pegs on the board as possible.</li>
-      </ol>
+  <div class="flex-center">
+    <div>
+      <div id="comments" class="flex-column">
+        <strong>Basic Rules</strong>
+        <ol>
+          <li>Jump a peg over another peg, but only if there is an open space available.</li>
+          <li>Remove each peg you jump over.</li>
+          <li>Leave the least number of pegs on the board as possible.</li>
+        </ol>
+      </div>
+      <div id="statistics">
+        <div><strong>Game Count: </strong><span id="games">0</span></div>
+        Pegs Left: No. Games
+        <div class="pegGame">
+          <div class="expand">
+            <ul>
+              <li>1: <span id="1peg">0</span> </li>
+              <li>2: <span id="2peg">0</span></li>
+              <li>3: <span id="3peg">0</span></li>
+              <li>4: <span id="4peg">0</span></li>
+            </ul>
+          </div>
+          <div class="expand">
+            <ul>
+              <li>5: <span id="5peg">0</span></li>
+              <li>6: <span id="6peg">0</span></li>
+              <li>7: <span id="7peg">0</span></li>
+              <li>8: <span id="8peg">0</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="game">
       <h2 id="title">Triangle Peg Game</h2>
-      <div id="board">
+      <div id="board" class="flex-column">
         <div class="row first">
           <div class="spot" id="0"></div>
           <div class="spot" id="1"></div>

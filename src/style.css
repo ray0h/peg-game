@@ -2,19 +2,28 @@ body {
   font-family: arial;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 #title{
   text-align: center;
 }
 
 #comments {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 250px;
+  margin: 10px;
   padding: 10px;
-  margin: 100px 10px;
   border: black 1px solid;
+}
+
+#statistics {
+  border: black 1px solid;
+  padding: 20px;
+  margin: 10px;
 }
 
 #game {
@@ -25,8 +34,6 @@ body {
 }
 
 #board {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -48,7 +55,23 @@ body {
   cursor: pointer;
 }
 
-.container {
+.pegGame {
+  display: flex;
+  flex-wrap: nowrap;
+  /* flex-grow: 1; */
+  /* border: 1px black solid; */
+}
+
+.expand {
+  flex-grow: 1;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
   display: flex;
   justify-content: center;
 }

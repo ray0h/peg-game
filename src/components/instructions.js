@@ -12,4 +12,12 @@ export const resetBoard = () => {
     button.textContent = "Reset Game"
     createMessage('Choose peg to remove and start the game');
   };
-}
+};
+
+export const addGame = (count, endPegs, epGames) => {
+  let games = document.getElementById('games');
+  let ep = document.getElementById(endPegs+'peg')
+
+  games.textContent = count;
+  ep.textContent = epGames;
+};

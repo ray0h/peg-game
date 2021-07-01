@@ -1,8 +1,11 @@
-import { createMessage, resetBoard } from '/instructions.js';
-import Board from './board.js';
+import { createMessage, resetBoard, addGame } from './components/instructions.js';
+import Board from './components/board.js';
+import Stats from './components/stats.js';
 
 // Game flow
 const board = new Board();
+const stat = new Stats();
+
 const game = (e) => {
   let currentPeg = document.querySelector('.chosen') ? document.querySelector('.chosen').id : null;
   if (board.boardFull() && board.isSpot(e.target.id)) {
@@ -29,10 +32,13 @@ const game = (e) => {
   };
 
   // check current status of board
-  if (!board.movesLeft() && !board.boardFull()) {
+  if (!board.movesLeft() && !board.boardFull() && button.textContent !== 'New Game') {
+    // Game is over
     let pegCount = board.pegCount();
     createMessage(`Game Over, ${pegCount} ${pegCount == 1 ? 'peg' : 'pegs'} left`);
     button.textContent = 'New Game';
+    stat.addGame(pegCount);
+    addGame(stat.gameCount, pegCount, stat.endPegs[pegCount]);
   }; 
 };
 

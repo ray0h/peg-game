@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { createMessage, resetBoard } from '../instructions'
+import { createMessage, resetBoard } from '../src/components/instructions'
 
 describe ('test of container to output messages', () => {
   test('message is generated', () => {
