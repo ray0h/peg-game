@@ -5,3 +5,5 @@ Finish the game with the lowest number of pegs available.
 Bonus if the last peg ends up in the starting hole!
 
 Game was made using vanilla JS, HTML, and CSS.
+
+[Demo](https://ray0h.github.io/peg-game)

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
