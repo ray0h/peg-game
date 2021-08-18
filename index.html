@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type-"text/css" href="style.css">
+  <title>Peg Game</title>
+</head>
+<body>
+  <script type="module" src="index.js"></script>
+  <div class="flex-center">
+    <div>
+      <div id="comments" class="flex-column">
+        Made famous by a well known restaurant chain.
+        <strong>Basic Rules</strong>
+        <ol>
+          <li>Remove one peg from filled board.</li>
+          <li>Jump a peg over another peg, but only if there is an open space to jump to.</li>
+          <li>Remove each peg you jump over.</li>
+          <li>Leave the least number of pegs on the board as possible.</li>
+        </ol>
+      </div>
+      <div id="statistics">
+        Basic Historical Stats:
+        <div><strong>Game Count: </strong><span id="games">0</span></div>
+        Pegs Left: No. of Games
+        <div class="pegGame">
+          <div class="expand">
+            <ul>
+              <li>1: <span id="1peg">0</span></li>
+              <li>2: <span id="2peg">0</span></li>
+              <li>3: <span id="3peg">0</span></li>
+              <li>4: <span id="4peg">0</span></li>
+            </ul>
+          </div>
+          <div class="expand">
+            <ul>
+              <li>5: <span id="5peg">0</span></li>
+              <li>6: <span id="6peg">0</span></li>
+              <li>7: <span id="7peg">0</span></li>
+              <li>8: <span id="8peg">0</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="game">
+      <h2 id="title">Triangle Peg Game</h2>
+      <div id="board" class="flex-column">
+        <div class="row first">
+          <div class="spot" id="0"></div>
+          <div class="spot" id="1"></div>
+          <div class="spot" id="2"></div>
+          <div class="spot" id="3"></div>
+          <div class="spot" id="4"></div>
+        </div>
+        <div class="row second">
+          <div class="spot" id="5"></div>
+          <div class="spot" id="6"></div>
+          <div class="spot" id="7"></div>
+          <div class="spot" id="8"></div>
+        </div>
+        <div class="row third">
+          <div class="spot" id="9"></div>
+          <div class="spot" id="10"></div>
+          <div class="spot" id="11"></div>
+        </div>
+        <div class="row fourth">
+          <div class="spot" id="12"></div>
+          <div class="spot" id="13"></div>
+        </div>
+        <div class="row">
+          <div class="spot" id="14"></div>
+        </div>
+      </div>
+      <div id="msgcontainer">
+        <div id="message">test</div>
+        <button id="reset">Reset Game</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

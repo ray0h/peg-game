@@ -1,0 +1,118 @@
+body {
+  font-family: arial;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#title{
+  text-align: center;
+}
+
+#comments {
+  align-items: center;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: black 1px solid;
+}
+
+#statistics {
+  border: black 1px solid;
+  padding: 20px;
+  margin: 10px;
+}
+
+#game {
+  border: black 1px solid;
+  margin: 10px;
+  padding: 10px;
+  width: 450px;
+}
+
+#board {
+  justify-content: center;
+  align-items: center;
+}
+
+#msgcontainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#message {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+#reset {
+  font-size: 15px;
+  padding: 5px;
+  /* background-color: lightgray; */
+  cursor: pointer;
+}
+
+.pegGame {
+  display: flex;
+  flex-wrap: nowrap;
+  /* flex-grow: 1; */
+  /* border: 1px black solid; */
+}
+
+.expand {
+  flex-grow: 1;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  width: 350px;
+}
+
+.second {
+  width: 280px;
+}
+
+.third {
+  width: 210px;
+}
+
+.fourth {
+  width: 140px;
+}
+.spot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: burlywood;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.chosen {
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+
+.empty {
+  background-color: black;
+  height: 20px;
+  width: 20px;
+}
+
